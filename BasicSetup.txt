@@ -1,0 +1,58 @@
+*****Dont touch this****
+
+
+npm i
+npm run dev
+
+
+
+for pushing
+
+Shriya-- cd c (press tab)
+ General-
+ {
+    git add .
+    git commit -m "time stamp & name"
+    git push
+ }
+
+-->to fetch latest files from github to vs code
+ git pull
+
+
+
+ Download extension provided in the 1.png and 2.png
+
+
+
+For svg/sources/images
+ https://github.com/daulathussain/Croud-funding-starter-file
+
+
+
+
+
+
+
+
+ ***
+ npm i hardhat
+ npx hardhat --init
+ ***
+
+
+
+ ***48:20
+ split terminal--use everytime while coding
+
+
+ npx hardhat node -- for accounts (20)
+
+ npx hardhat run --network localhost scripts/deploy.js
+ -->CrowdFunding deployed to 0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9
+ ***
+
+
+
+ 48:58 moved cf.json from artifacts to contexgt
+ yt video address-- 0x5FbDB2315678afecb367f032d93F642f64180aa3
