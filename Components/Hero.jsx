@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
+"use client";
+import React, { useState } from "react";
 const Hero = ({ titleData, createCampaign }) => {
   const [campaign, setCampaign] = useState({
-    title: '',
-    description: '',
-    amount: '',
-    deadline: '',
+    title: "",
+    description: "",
+    amount: "",
+    deadline: "",
   });
   const createNewCampaign = async (e) => {
     e.preventDefault();
     try {
       const data = await createCampaign(campaign);
-
     } catch (error) {
       console.log(error);
     }
@@ -32,17 +32,17 @@ const Hero = ({ titleData, createCampaign }) => {
             fill="currentColor"
             d="M-164 13L-104 39.7C-44 66 76 120 196 141.3C316 162.7 436 151.3 556 112C676 72.7 796 6.3 916 0C1036 -6.3 1156 39.7 1216 62L1276 84L1276 161.5L1216 161.5C1156 161.5 1036 161.5 916 161.5C796 161.5 676 161.5 556 161.5C436 161.5 316 161.5 196 161.5C76 161.5 -44 161.5 -104 161.5L-164 161.5L-164 13Z"
           />
-
         </svg>
         <div className="relative px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
           <div className="flex flex-col items-center justify-between xl:flex-row">
             <div className="w-full max-w-xl mb-12 xl:mb-0 xl:pr-16 xl:w-7/12">
               <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold sm:leading-none tracking-tight text-white sm:text-5xl">
-                Crypto King <br className='hidden md:block' />
+                Crypto King <br className="hidden md:block" />
                 Crowd Funding CK
               </h2>
               <p className="max-w-xl mb-4 text-base text-gray-200 md:text-lg">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod nam totam aspernatur culpa eos accusamus amet at aut a. Id.
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod
+                nam totam aspernatur culpa eos accusamus amet at aut a. Id.
               </p>
               <a
                 href="/"
@@ -76,25 +76,27 @@ const Hero = ({ titleData, createCampaign }) => {
                       onChange={(e) =>
                         setCampaign({ ...campaign, title: e.target.value })
                       }
-                    )
-                      }
                       placeholder="title"
                       required
                       type="text"
                       className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
                       id="firstName"
                       name="firstName"
-                    /></div>
-                    <div className="mb-1 sm:mb-2">
+                    />
+                  </div>
+                  <div className="mb-1 sm:mb-2">
                     <label
                       htmlFor="lastName"
-                      className='inline-block mb-1 font-medium'
+                      className="inline-block mb-1 font-medium"
                     >
                       Description
                     </label>
                     <input
                       onChange={(e) =>
-                        setCampaign({ ...campaign, description: e.target.value })
+                        setCampaign({
+                          ...campaign,
+                          description: e.target.value,
+                        })
                       }
                       placeholder="description"
                       required
@@ -102,13 +104,14 @@ const Hero = ({ titleData, createCampaign }) => {
                       className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
                       id="lastName"
                       name="lastName"
-                    /></div>
-                    <div className="mb-1 sm:mb-2">
+                    />
+                  </div>
+                  <div className="mb-1 sm:mb-2">
                     <label
-                      htmlFor="email" 
+                      htmlFor="email"
                       className="inline-block mb-1 font-medium"
                     >
-                      Target Amount 
+                      Target Amount
                     </label>
                     <input
                       onChange={(e) =>
@@ -120,14 +123,46 @@ const Hero = ({ titleData, createCampaign }) => {
                       className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
                       id="email"
                       name="email"
-                    /></div>
-                    <div className="mb-1 sm:mb-2">
+                    />
+                  </div>
+                  <div className="mb-1 sm:mb-2">
                     <label
                       htmlFor="email"
                       className="inline-block mb-1 font-medium"
                     >
                       TargetAmount
-                  </form>
+                    </label>
+                    <input
+                      onChange={(e) =>
+                        setCampaign({ ...campaign, deadline: e.target.value })
+                      }
+                      placeholder="Date"
+                      required
+                      type="date"
+                      className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
+                      id="email"
+                      name="email"
+                    />
+                  </div>
+                  <div className="mt-4 mb-2 sm:mb-4">
+                    <button
+                      onClick={(e) => createNewCampaign(e)}
+                      type="submit"
+                      className="hover:cursor-pointer inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide  transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                    >
+                      Create Campaign
+                    </button>
+                  </div>
+                  <p className="text-xs text-gray-600 sm:text-sm">
+                    Create your campaign to raise funds
+                  </p>
+                </form>
               </div>
-/>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+export default Hero;

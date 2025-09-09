@@ -56,3 +56,6 @@ CrowdFunding deployed to 0x5FbDB2315678afecb367f032d93F642f64180aa3
 
  48:58 moved cf.json from artifacts to contexgt
  yt video address-- 0x5FbDB2315678afecb367f032d93F642f64180aa3
+
+
+ 2:12:32--wallet not working
